@@ -34,11 +34,11 @@ app.post('/api/AddUser', (req,res) => {
                 }
             )
 
-            return res.status(200).send();
+            return res.status(200).send({status: 'User added succesfully!'});
         }
         catch(error){
             console.log(error);
-            return res.status(500).send();
+            return res.status(500).send({error: error});
         }
     })();
     
@@ -60,7 +60,7 @@ app.get('/api/GetUser/:id', (req,res) => {
         }
         catch(error){
             console.log(error);
-            return res.status(500).send();
+            return res.status(500).send({error: error});
         }
     })();
     
@@ -95,7 +95,7 @@ app.get('/api/GetAllUsers', (req,res) => {
         }
         catch(error){
             console.log(error);
-            return res.status(500).send();
+            return res.status(500).send({error: error});
         }
     })();
     
@@ -116,11 +116,11 @@ app.put('/api/UpdateUser/:id', (req,res) => {
                 phoneno : req.body.phoneno
             });
             
-            return res.status(200).send();
+            return res.status(200).send({status: 'User updated succesfully!'});
         }
         catch(error){
             console.log(error);
-            return res.status(500).send();
+            return res.status(500).send({error: error});
         }
     })();
     
@@ -134,11 +134,11 @@ app.delete('/api/DeleteUser/:id', (req,res) => {
         try{
             const document = db.collection('Users').doc(req.params.id);
             let user = await document.delete();
-            return res.status(200).send();
+            return res.status(200).send({status: 'User deleted succesfully!'});
         }
         catch(error){
             console.log(error);
-            return res.status(500).send();
+            return res.status(500).send({error: error});
         }
     })();
     
