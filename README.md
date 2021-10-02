@@ -90,4 +90,67 @@
   * **Code:** 500 <br />
     **Content:** `{ error : "Issue with getting response." }`
 
-Postman Collection : https://www.getpostman.com/collections/08681ceca1ba53bb777f
+
+**GET SINGLE USER**
+----
+  This API gets the single user from Firebase database
+
+* **URL**
+
+  /api/GetUser/:id
+
+* **Method:**
+
+  `GET`
+  
+
+* **Data Params**
+
+    {id:'1221544'}
+
+* **Success Response:**
+  
+
+  * **Code:** 200 <br />
+    **Content:** `{ id : 12, name: "Abc", age: 14 }`
+ 
+* **Error Response:**
+
+ 
+  * **Code:** 500 <br />
+    **Content:** `{ error : "Issue with getting response." }`
+
+
+**DELETE USER**
+----
+  This API deletes the user from Firebase database
+
+* **URL**
+
+  /api/DeleteUser/:id
+
+* **Method:**
+
+  `DELETE`
+  
+
+* **Data Params**
+
+    {id:'1221544'}
+
+* **Success Response:**
+  
+
+  * **Code:** 200 <br />
+    **Content:** `{status: 'User deleted succesfully!'}`
+ 
+* **Error Response:**
+
+ 
+  * **Code:** 500 <br />
+    **Content:** `{ error : "Issue with getting response." }`
+
+
+* **You can also refer to this Postman Collection for the APIs**
+
+**Postman Collection :** https://www.getpostman.com/collections/08681ceca1ba53bb777f
